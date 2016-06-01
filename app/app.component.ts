@@ -7,7 +7,7 @@ import { cdDisplayComponent } from './cd.display.component';
   directives: [cdDisplayComponent],
   template: `
   <div class="container">
-    <h1>Whatever</h1>
+    <h1>Music Store</h1>
     <CD-display [CDlist]="CDs"></CD-display>
   </div>
   `
