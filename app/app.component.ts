@@ -8,11 +8,7 @@ import { cdDisplayComponent } from './cd.display.component';
   template: `
   <div class="container">
     <h1>Whatever</h1>
-    <h3 *ngFor="#currentCD of CDs">
-
-      <CD-display [CD]="currentCD"></CD-display>
-      
-    </h3>
+    <CD-display [CDlist]="CDs"></CD-display>
   </div>
   `
 })
