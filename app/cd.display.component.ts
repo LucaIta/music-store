@@ -1,12 +1,14 @@
 import { Component } from 'angular2/core';
 import { CD } from './cd.model';
-import {CdPipe} from './cd.pipe';
-import {ArtistPipe} from './artist.pipe';
+import { CdPipe } from './cd.pipe';
+import { ArtistPipe } from './artist.pipe';
+import { CdComponent } from './cd.component';
 
 @Component({
   selector: "CD-display",
   inputs: ['CDlist'],
   pipes: [CdPipe, ArtistPipe],
+  directives: [CdComponent],
   template:`
   <hr>
   <h4>Use this to filter by genre:</h4>
@@ -26,10 +28,18 @@ import {ArtistPipe} from './artist.pipe';
   </select>
   <hr>
 
+  <h2 *ngFor="#currentCD of CDlist | genre:filterGenre | artist:filterArtist">
+    <cd-display [CD]="currentCD"></cd-display>
+    <!--<h3 (click)="cdClicked(CD)"
+     [class.selected]="CD === selectedCD"> -->
+    <br>
+  </h2>
 
 
 
-  <h2 *ngFor="#CD of CDlist | genre:filterGenre | artist:filterArtist">
+
+
+  <!-- <h2 *ngFor="#CD of CDlist | genre:filterGenre | artist:filterArtist">
     <h3 (click)="cdClicked(CD)"
      [class.selected]="CD === selectedCD">
      CD's title: {{CD.name}}</h3>
@@ -37,7 +47,7 @@ import {ArtistPipe} from './artist.pipe';
     <h4> Price $: {{CD.price}}</h4>
     <h4> Genre: {{CD.genre}}</h4>
     <br>
-  </h2>
+  </h2> -->
   `
 })
 
