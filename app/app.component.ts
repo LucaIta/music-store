@@ -17,10 +17,10 @@ export class AppComponent {
    public CDs : CD[];
    constructor(){
      this.CDs = [
-      new CD("Thriller.", "Michel Jackson", 6, "POP", 0),
+      new CD("Thriller.", "Michael Jackson", 6, "POP", 0),
       new CD("MammaMia.", "Abba ", 7, "POP", 1),
-      new CD("Queen.", "The Queen", 5, "POP", 2),
-      new CD("Bad.", "Michel Jackson", 6, "POP", 3)
+      new CD("Queen.", "The Queen", 5, "ROCK", 2),
+      new CD("Bad.", "Michael Jackson", 6, "POP", 3)
      ];
    }
 }
