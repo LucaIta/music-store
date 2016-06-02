@@ -6,23 +6,27 @@ import { CD } from './cd.model'
   inputs: ['CD'],
   template:`
   <div>
-    <input *ngIf="CD.bought" type="checkbox" checked (click)="toggleBought(false)"/>
+    <input *ngIf="CD.bought" type="checkbox" checked (click)="toggleBought(false)" (click)="addPrice(CD.price)"/>
     <input *ngIf="!CD.bought" type="checkbox" (click)="toggleBought(true)"/>
 
     <label>{{ CD.name }}</label>
 
-    <!--<h3> CD's title: {{CD.name}}</h3>
     <h4> Artist: {{CD.artist}}</h4>
     <h4> Price $: {{CD.price}}</h4>
-    <h4> Genre: {{CD.genre}}</h4>-->
-
+    <h4> Genre: {{CD.genre}}</h4>
   </div>
+  <h4>Total Price : {{totalPrice}}</h4>
   `
 })
 
 export class CdComponent {
+  public totalPrice : number = 0;
   public CD : CD;
   toggleBought(setState : boolean){
     this.CD.bought = setState;
   }
+  addPrice(price : number){
+    this.totalPrice += price;
+  }
+
 }

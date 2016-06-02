@@ -14,6 +14,7 @@ import { cartComponent } from './cart.component';
         <CD-display [CDlist]="CDs"></CD-display>
       </div>
       <div class="col-md-5">
+        <h1>Shopping Cart</h1>
         <cart-list [CDlist]="CDs"></cart-list>
       </div>
 
@@ -26,10 +27,10 @@ export class AppComponent {
    public CDs : CD[];
    constructor(){
      this.CDs = [
-      new CD("Thriller.", "Michael Jackson", 6, "POP", 0),
-      new CD("MammaMia.", "Abba", 7, "POP", 1),
-      new CD("Queen.", "The Queen", 5, "ROCK", 2),
-      new CD("Bad.", "Michael Jackson", 6, "POP", 3)
+      new CD("Thriller", "Michael Jackson", 6, "POP", 0),
+      new CD("MammaMia", "Abba", 7, "POP", 1),
+      new CD("Queen", "The Queen", 5, "ROCK", 2),
+      new CD("Bad", "Michael Jackson", 6, "POP", 3)
      ];
    }
 }
